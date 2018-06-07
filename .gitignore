@@ -8,3 +8,14 @@
 /build
 /captures
 .externalNativeBuild
+/retrofitutils/
+.idea/vcs.xml
+app/libs/
+basiclib/libs/
+basiclib/src/main/java/com/example/basiclib/utils/retrofitutils/entity/
+basiclib/src/main/res/drawable/
+familyTree/
+toolslibrary/libs/
+toolslibrary/src/main/res/drawable/
+!/toolslibrary/build/
+/app/build/

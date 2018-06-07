@@ -119,11 +119,11 @@ public class PerfectDataActivity extends BaseActivity {
                 });
                 break;
             case R.id.rightIcon_tv:
-                name= name_ed.getText().toString();
-                IDnumber = IDnumber_ed.getText().toString();
-                hometown = hometown_ed.getText().toString();
-                duties = duties_ed.getText().toString();
-                birthday = birthday_tv.getText().toString();
+                name= name_ed.getText().toString().trim();
+                IDnumber = IDnumber_ed.getText().toString().trim();
+                hometown = hometown_ed.getText().toString().trim();
+                duties = duties_ed.getText().toString().trim();
+                birthday = birthday_tv.getText().toString().trim();
                 update();
                 break;
         }
@@ -173,7 +173,7 @@ public class PerfectDataActivity extends BaseActivity {
 
             @Override
             public void fail() {
-                ToastUtils.showShort("缺少必要权限");
+                showToast("缺少必要权限");
             }
 
             @Override

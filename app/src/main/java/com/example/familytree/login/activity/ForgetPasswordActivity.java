@@ -76,7 +76,7 @@ public class ForgetPasswordActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.forget_getcode_bt:
-                phone = phone_ed.getText().toString();
+                phone = phone_ed.getText().toString().trim();
                 if(TextUtils.isEmpty(phone) || !PhoneNumberUtil.isPhoneNumber(phone)){
                     showToast("请输入正确的手机号码");
                 }else{
@@ -84,10 +84,10 @@ public class ForgetPasswordActivity extends BaseActivity {
                 }
                 break;
             case R.id.forget_commit_bt:
-                phone = phone_ed.getText().toString();
-                code = code_ed.getText().toString();
-                password = password_ed.getText().toString();
-                again_password = again_password_ed.getText().toString();
+                phone = phone_ed.getText().toString().trim();
+                code = code_ed.getText().toString().trim();
+                password = password_ed.getText().toString().trim();
+                again_password = again_password_ed.getText().toString().trim();
                 if(!TextUtils.isEmpty(phone) && !TextUtils.isEmpty(code) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(again_password)){
                 if(!password.equals(again_password)){
                     showToast("两次密码输入不一致");

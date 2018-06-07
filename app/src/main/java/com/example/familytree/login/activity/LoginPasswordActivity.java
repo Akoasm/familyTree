@@ -19,6 +19,7 @@ import com.example.familytree.R;
 import com.example.familytree.login.bean.LoginInfo;
 import com.example.toolslibrary.exception.ApiException;
 import com.google.gson.Gson;
+import com.gyf.barlibrary.ImmersionBar;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +35,6 @@ public class LoginPasswordActivity extends BaseActivity {
     private String phone, password;
     private Button login_bt;
     private TextView register,loginPhone,forgetPassword;
-
     @Override
     public void initParms(Bundle params) {
 
@@ -58,6 +58,7 @@ public class LoginPasswordActivity extends BaseActivity {
         register = view.findViewById(R.id.login_register_tv);
         loginPhone = view.findViewById(R.id.login_change_message);
         forgetPassword = view.findViewById(R.id.login_forget_password);
+
     }
 
     @Override
@@ -72,8 +73,8 @@ public class LoginPasswordActivity extends BaseActivity {
     public void widgetClick(View v) {
         switch (v.getId()) {
             case R.id.loginpassword_login_bt:
-                phone = phone_ed.getText().toString();
-                password = password_ed.getText().toString();
+                phone = phone_ed.getText().toString().trim();
+                password = password_ed.getText().toString().trim();
                 if (TextUtils.isEmpty(phone) || !PhoneNumberUtil.isPhoneNumber(phone)) {
                     showToast("请输入正确的手机号码");
                 } else if (TextUtils.isEmpty(password)) {

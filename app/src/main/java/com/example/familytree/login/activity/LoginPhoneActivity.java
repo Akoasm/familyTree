@@ -73,7 +73,7 @@ public class LoginPhoneActivity extends BaseActivity {
     public void widgetClick(View v) {
         switch (v.getId()){
             case R.id.phonelogin_getcode_bt:
-                phone = phone_ed.getText().toString();
+                phone = phone_ed.getText().toString().trim();
                 if(!PhoneNumberUtil.isPhoneNumber(phone) || TextUtils.isEmpty(phone)){
                     showToast("请输入正确的手机号码");
                 }else {
@@ -81,8 +81,8 @@ public class LoginPhoneActivity extends BaseActivity {
                 }
                 break;
             case R.id.phonelogin_login:
-                phone = phone_ed.getText().toString();
-                code = code_ed.getText().toString();
+                phone = phone_ed.getText().toString().trim();
+                code = code_ed.getText().toString().trim();
                 if(!TextUtils.isEmpty(phone) && !TextUtils.isEmpty(code)){
                     login();
                 }else{

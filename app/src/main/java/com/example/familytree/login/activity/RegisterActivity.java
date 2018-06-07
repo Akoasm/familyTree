@@ -69,7 +69,7 @@ public class RegisterActivity extends BaseActivity {
     public void widgetClick(View v) {
         switch (v.getId()){
             case R.id.register_getcode_bt:
-                phone = phone_ed.getText().toString();
+                phone = phone_ed.getText().toString().trim();
                 if(TextUtils.isEmpty(phone) || !PhoneNumberUtil.isPhoneNumber(phone)){
                     showToast("请输入正确的手机号码");
                 }else{
@@ -78,9 +78,9 @@ public class RegisterActivity extends BaseActivity {
                 }
                 break;
             case R.id.register_register_bt:
-                phone = phone_ed.getText().toString();
-                password = password_ed.getText().toString();
-                code = code_ed.getText().toString();
+                phone = phone_ed.getText().toString().trim();
+                password = password_ed.getText().toString().trim();
+                code = code_ed.getText().toString().trim();
                 if(TextUtils.isEmpty(phone)||TextUtils.isEmpty(password)|| TextUtils.isEmpty(code)){
                     showToast("请输入完整信息");
                 }else{
@@ -117,26 +117,5 @@ public class RegisterActivity extends BaseActivity {
         apiManager.post(HttpPath.REGISTER,params);
     }
 
-//    private void getCode(){
-//        Map<String,String> params=new HashMap<>();
-//        params.put("phone",phone);
-//        ApiManager manager = new ApiManager(this, new StringCallBack() {
-//            @Override
-//            public void onResultNext(String result, String method, int code, String msg) throws Exception {
-//
-//                if(code == 100){
-//                    CountDownUtils.countDown(getCode_bt,60);
-//                }else {
-//                    showToast(msg);
-//                }
-//            }
-//
-//            @Override
-//            public void onResultError(ApiException e, String method) {
-//
-//            }
-//        });
-//        manager.post(HttpPath.GET_CODE,params);
-//    }
 
 }

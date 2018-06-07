@@ -13,6 +13,7 @@ import android.view.WindowManager;
 
 import com.example.basiclib.utils.apputils.LogUtils;
 import com.example.basiclib.utils.apputils.ToastUtils;
+import com.gyf.barlibrary.ImmersionBar;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 
@@ -27,6 +28,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements View.O
     private View mContextView = null;
     /** 日志输出标志 **/
     protected final String TAG = this.getClass().getSimpleName();
+    private ImmersionBar mImmersionBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +42,9 @@ public abstract class BaseActivity extends RxAppCompatActivity implements View.O
         }
 
         setContentView(mContextView);
-        if (isSetStatusBar) {
+//        if (isSetStatusBar) {
             steepStatusBar();
-        }
+//        }
         if (isAllowScreenRoate) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
@@ -75,6 +77,8 @@ public abstract class BaseActivity extends RxAppCompatActivity implements View.O
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (mImmersionBar != null)
+            mImmersionBar.destroy();  //必须调用该方法，防止内存泄漏，不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
     }
 
     @Override
@@ -93,6 +97,9 @@ public abstract class BaseActivity extends RxAppCompatActivity implements View.O
      * [沉浸状态栏]
      */
     public void steepStatusBar() {
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.statusBarDarkFont(true);
+        mImmersionBar.init();   //所有子类都将继承这些相同的属性
     }
 
     /**
@@ -227,13 +234,6 @@ public abstract class BaseActivity extends RxAppCompatActivity implements View.O
         isAllowScreenRoate = allowScreenRoate;
     }
 
-    public boolean isSetStatusBar() {
-        return isSetStatusBar;
-    }
-
-    public void setSetStatusBar(boolean setStatusBar) {
-        isSetStatusBar = setStatusBar;
-    }
     /**
      * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
      */
