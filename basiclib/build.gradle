@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    packagingOptions {
+        pickFirst 'META-INF/*'
+    }
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //日期选择
+    api 'com.contrarywind:Android-PickerView:3.2.7'
+    //下拉刷新，上拉加载
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4'
+    //retrofit
+    api project(':toolslibrary')
+    //图片加载Glide
+    api 'com.github.bumptech.glide:glide:4.1.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+    //log打印
+    api 'com.orhanobut:logger:1.15'
+    //权限申请
+    api 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+    //json解析
+    api 'com.google.code.gson:gson:2.8.0'
+    //知乎开源图片选择框架
+    api 'com.zhihu.android:matisse:0.5.0-beta2'
+    //ImageViewZoom，matisse需要依赖，具有图片缩放和平移功能
+    api 'it.sephiroth.android.library.imagezoom:library:1.0.4'
+    //glide
+    api 'com.github.bumptech.glide:glide:3.7.0'
+}
+

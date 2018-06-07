@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <include layout="@layout/basic_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <RelativeLayout
+            android:id="@+id/personal_head_re"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="头像"
+                android:textColor="@color/textBlack"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/personal_head_img"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_head_portrait" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <RelativeLayout
+            android:id="@+id/personal_name_re"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="姓名"
+                android:textColor="@color/textBlack"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/personal_name_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请填写真实姓名"
+                android:textColor="@color/textBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <RelativeLayout
+            android:id="@+id/personal_IDcard_re"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="身份证号"
+                android:textColor="@color/textBlack"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/personal_IDcard_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="必填"
+                android:textColor="@color/textBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <RelativeLayout
+            android:id="@+id/personal_phone_re"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="电话"
+                android:textColor="@color/textBlack"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/personal_phone_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="必填"
+                android:textColor="@color/textBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <RelativeLayout
+            android:id="@+id/personal_birthday_re"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="生日"
+                android:textColor="@color/textBlack"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/personal_birthday_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_details" />
+
+            <TextView
+                android:id="@+id/personal_birthday_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <RelativeLayout
+            android:id="@+id/personal_homeplace_re"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="出生地"
+                android:textColor="@color/textBlack"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/personal_homeplace_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请填写出生地"
+                android:textColor="@color/textBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <RelativeLayout
+            android:id="@+id/personal_duties_re"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="职务"
+                android:textColor="@color/textBlack"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/personal_duties_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请填写职务"
+                android:textColor="@color/textBlack"
+                android:textColorHint="@color/colorGray"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <RelativeLayout
+            android:id="@+id/personal_education_re"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="学历"
+                android:textColor="@color/textBlack"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/personal_education_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_details" />
+
+            <TextView
+                android:id="@+id/personal_education_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+    </LinearLayout>
+</LinearLayout>
